@@ -1,7 +1,7 @@
 {
-  "name": "gulp-etl-handlelines",
+  "name": "gulp-etl-recipes",
   "version": "1.0.0",
-  "description": "Starter for gulp plugin",
+  "description": "recipes for gulp-etl",
   "main": "dist/js/plugin.js",
   "typings": "dist/types/plugin.d.ts",
   "files": [
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "from2": "^2.3.0",
+    "gulp-csv-to-json": "^0.1.1",
     "gulp-error-handle": "^1.0.1",
     "loglevel": "^1.6.1",
     "pkginfo": "^0.4.1",
@@ -33,6 +34,9 @@
     "@types/vinyl-paths": "0.0.31",
     "del": "^4.1.1",
     "gulp": "^4.0.1",
+    "gulp-advanced-csv-to-json": "^0.1.6",
+    "gulp-csv2json": "^0.2.5",
+    "gulp-csvtojson": "^0.2.0",
     "gulp-rename": "^1.4.0",
     "jest": "^24.7.1",
     "jest-spec-reporter": "^1.0.5",
