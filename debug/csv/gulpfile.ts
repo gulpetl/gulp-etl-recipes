@@ -2,6 +2,7 @@ let gulp = require('gulp')
 import * as loglevel from 'loglevel'
 const log = loglevel.getLogger('gulpfile')
 log.setLevel((process.env.DEBUG_LEVEL || 'warn') as log.LogLevelDesc)
+var xml2json = require('gulp-xml2json');
 import * as rename from 'gulp-rename'
 const errorHandler = require('gulp-error-handle'); // handle all errors in one handler, but still stop the stream if there are errors
 
@@ -38,23 +39,17 @@ const allCaps = (lineObj: object): object => {
 }
 
 
+
 function demonstrateHandlelines(callback: any) {
   log.info('gulp starting for ' + PLUGIN_NAME)
-  return gulp.src('../../testdata/csv/*.csv',{buffer:false})
+  return gulp.src('../../testdata/XML/*.xml',{buffer:true})
       .pipe(errorHandler(function(err:any) {
         log.error('whoops: ' + err)
         callback(err)
       }))
-      .pipe(csvtojson({ toArrayString: true }))
-      // .pipe(aCsvToJson({
-      //   tabSize : 4
-      // }))
-      // .pipe(csv2json({}))
-      // .pipe(csv2json({}))
-      .pipe(rename({
-        suffix: "-fixed",
-      }))      
-      .pipe(gulp.dest('../../testdata/csv/processed'))
+      .pipe(xml2json())
+      .pipe(rename({extname: '.json'}))  
+      .pipe(gulp.dest('../../testdata/XML/Processed'))
       // .pipe(vinylPaths((path) => {
       //   // experimenting with deleting files, per https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md.
       //   // This actually deletes the NEW files, not the originals! Try gulp-revert-path

@@ -38,6 +38,7 @@
     "gulp-csv2json": "^0.2.5",
     "gulp-csvtojson": "^0.2.0",
     "gulp-rename": "^1.4.0",
+    "gulp-xml2json": "^0.1.5",
     "jest": "^24.7.1",
     "jest-spec-reporter": "^1.0.5",
     "ts-jest": "^24.0.2",
