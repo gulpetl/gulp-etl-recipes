@@ -36,8 +36,8 @@ exports.default = function() {
 }
 ```
 **xml2json**
-The readme for how to use csv2json plugin in the gulp file can be found below
-https://github.com/Mkr1996/gulp-etl-recipes/blob/master/CSV/CSVReadme.md
+The readme for how to use xml2json plugin in the gulp file can be found below
+https://github.com/Mkr1996/gulp-etl-recipes/blob/master/testdata/XML/Readme/XMLReadme.md
 
 
 Note: This document is written in [Markdown](https://daringfireball.net/projects/markdown/). We like to use [Typora](https://typora.io/) and [Markdown Preview Plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl?hl=en-US) for our Markdown work..
