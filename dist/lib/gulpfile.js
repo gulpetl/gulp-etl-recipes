@@ -1,35 +1,44 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 let gulp = require('gulp');
-const plugin_1 = require("./plugin");
-var plugin_2 = require("./plugin");
-exports.handlelines = plugin_2.handlelines;
-// handleLine could be the only needed piece to be replaced for most dataTube plugins
-const handleLine = (lineObj) => {
-    //console.log(line)
-    for (let propName in lineObj) {
-        let obj = lineObj;
-        if (typeof (obj[propName]) == "string")
-            obj[propName] = obj[propName].toUpperCase();
-    }
-    return lineObj;
-};
-function build_plumber(callback) {
-    let result;
-    result =
-        gulp.src('../InputOutput/testdata/*', { buffer: false }) //, { buffer: false }
-            .pipe(plugin_1.handlelines({ propsToAdd: { extraParam: 1 } }, { transformCallback: handleLine }))
-            .on('error', console.error.bind(console))
-            .pipe(gulp.dest('../InputOutput/output/processed'))
-            .on('end', function () {
-            console.log('end');
-            callback();
-        })
-            .on('error', function (err) {
-            console.error(err);
-            callback(err);
-        });
-    return result;
+const loglevel = require("loglevel");
+const log = loglevel.getLogger('gulpfile');
+log.setLevel((process.env.DEBUG_LEVEL || 'warn'));
+const errorHandler = require('gulp-error-handle');
+var rename = require('gulp-rename');
+var tapCsv = require('gulp-etl-tap-csv').tapCsv;
+const pkginfo = require('pkginfo')(module); // project package.json info into module.exports
+const PLUGIN_NAME = module.exports.name;
+function tapFunction(callback) {
+    log.info('gulp task starting for ' + PLUGIN_NAME);
+    return gulp.src('testdata/*.csv')
+        .pipe(errorHandler(function (err) {
+        log.error('Error: ' + err);
+        callback(err);
+    }))
+        .on('data', function (file) {
+        log.info('Starting processing on ' + file.basename);
+    })
+        .pipe(tapCsv({
+        raw: true /*, info:true */
+    }))
+        .pipe(rename({
+        extname: ".ndjson",
+    }))
+        .pipe(gulp.dest('./testdata/processed'))
+        .on('data', function (file) {
+        log.info('Finished processing on ' + file.basename);
+    })
+        .on('end', function () {
+        log.info('gulp task complete');
+        callback();
+    });
 }
-exports.default = gulp.series(build_plumber);
+function watch(callback) {
+    gulp.watch('testdata/*.csv', {
+        ignoreInitial: false
+    }, tapFunction);
+    callback();
+}
+exports.default = gulp.series(tapFunction, watch);
 //# sourceMappingURL=gulpfile.js.map
