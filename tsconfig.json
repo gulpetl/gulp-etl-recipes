@@ -13,10 +13,12 @@
         "declarationDir": "dist/types",
         "outDir": "dist/js",
         "typeRoots": [
-          "node_modules/@types"
+            "node_modules/@types"
         ]
     },
     "include": [
-        "src"
+        "src",
+        "watch",
+        "xml"
     ]
 }

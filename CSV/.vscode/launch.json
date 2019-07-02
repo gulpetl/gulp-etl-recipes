@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "XML",
+            "name": "CSV",
             "type": "node",
             "request": "launch",
             "program": "${workspaceRoot}/../node_modules/gulp/bin/gulp.js",
             "stopOnEntry": false,
-            "args": ["--gulpfile", "./gulpfile.ts", "default"],
+            "args": ["--gulpfile", "./csv/gulpfile.ts", "default"],
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [
                 "--nolazy", "-r", "ts-node/register"
@@ -23,13 +23,13 @@
             "request": "launch",
             "program": "${workspaceRoot}/../node_modules/gulp/bin/gulp.js",
             "stopOnEntry": false,
-            "args": ["--gulpfile", "./gulpfile.ts", "default"],
+            "args": ["--gulpfile", "./csv/gulpfile.ts", "default"],
             "cwd": "${workspaceRoot}",
             "runtimeArgs": [
                 "--nolazy", "-r", "ts-node/register"
             ],
             "console": "internalConsole",
             "env": {"DEBUG_LEVEL":"debug"}
-        },
+        }
     ]
 }
