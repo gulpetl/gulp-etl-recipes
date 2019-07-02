@@ -6,6 +6,8 @@ https://www.npmjs.com/package/gulp-x2j
 **npm**
 To install the parser with npm, type ```npm install --save-dev gulp-xml2json``` in the terminal
 
+Head over to the [gulpfile](./gulpfile.js) for some example code.
+
 ##### Sample gulpfile.ts
 Below is a sample gulp file
 ```
@@ -55,6 +57,7 @@ gulp.task('default', function () {
 **Options Documentation**
 node-xml2js Options documentation can be found in the link below:
 https://github.com/Leonidas-from-XIV/node-xml2js#options
+
 
 
 **npm link**

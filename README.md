@@ -12,39 +12,21 @@ A test project full of working gulpfiles, the goal here is to demonstrate some o
 {"type": "RECORD", "stream": "locations", "record": {"id": 1, "name": "Philadelphia"}}
 {"type": "STATE", "value": {"users": 2, "locations": 1}}
 ```
+**Sections**
 
-##### Sample gulpfile.js
-```
-let handleLines = require('gulp-etl-handlelines')
+- [FTP](./FTP/README.md)
+- [Watch](./Watch/README.md)
+- [XML](./XML/README.md)
 
-const handleLine = (lineObj) => {
-    // return null to remove this line
-    if (!lineObj.record || !lineObj.record["TestValue"]) {return null}
-    
-    // optionally make changes to lineObj
-    lineObj.record["NewProperty"] = "asdf"
+**Adding Recipe**
 
-    // return the changed lineObj
-    return lineObj
-}
+When wanting to add to recipes there are 3 items needed in each folder,
+1. gulpfile
+2. README specific for the file, with a link to gulpfile
+3. launch.json file in the sub folder. 
+4. Add yourself to the sections list above
 
-exports.default = function() {
-    return src('data/*.ndjson')
-    // pipe the files through our handlelines plugin
-    .pipe(handlelines.handlelines({}, { transformCallback: handleLine }))
-    .pipe(dest('output/'));
-}
-```
-**xml2json**
-The readme for how to use csv2json plugin in the gulp file can be found below
-https://github.com/Mkr1996/gulp-etl-recipes/blob/master/CSV/CSVReadme.md
-
-**Adding recipies**
-When wanting to add to recipies there are 3 items needed in each folder,
-    1. gulpfile
-    2. ReadME specific for the file
-    3. launch.json file in the sub folder. 
-Another thing that should be present in the file is the test files needed for the recipies of the file. 
-The best way to create a recipie is to duplicate the sample folder replace with your work within said folder.
+Another thing that should be present in the file is the test files needed for the recipes of the file. 
+The best way to create a recipe is to copy the contents of the sample folder whose [readme](./sample/README.md) has a bit of info, and paste into a new folder named with your subject.
 
 Note: This document is written in [Markdown](https://daringfireball.net/projects/markdown/). We like to use [Typora](https://typora.io/) and [Markdown Preview Plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl?hl=en-US) for our Markdown work..

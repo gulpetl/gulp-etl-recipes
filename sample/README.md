@@ -1,4 +1,4 @@
-###Recipe Title###
+### Recipe Title
 
 Make sure to include things like if the concept is a wrapper for another, or explinations for things like message streams, as shown below
 ```
@@ -24,5 +24,7 @@ exports.default = function() {
     //body omitted
 }
 ```
+
+Link the [gulpfile](./gulpfile.ts) to see more uses of the item
 
 Note: This document is written in [Markdown](https://daringfireball.net/projects/markdown/). We like to use [Typora](https://typora.io/) and [Markdown Preview Plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl?hl=en-US) for our Markdown work..
