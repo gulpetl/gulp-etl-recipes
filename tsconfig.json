@@ -18,6 +18,8 @@
     },
     "include": [
         "src",
-        "watch"
+        "watch",
+        "xml"
+
     ]
 }

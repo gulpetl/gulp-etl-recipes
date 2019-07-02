@@ -39,12 +39,12 @@ exports.default = function() {
 The readme for how to use csv2json plugin in the gulp file can be found below
 https://github.com/Mkr1996/gulp-etl-recipes/blob/master/CSV/CSVReadme.md
 
-**Adding recipies**
+**Adding to recipies**
 When wanting to add to recipies there are 3 items needed in each folder,
     1. gulpfile
     2. ReadME specific for the file
     3. launch.json file in the sub folder. 
 Another thing that should be present in the file is the test files needed for the recipies of the file. 
-The best way to create a recipie is to duplicate the sample folder replace with your work within said folder.
+The best way to create a recipie is to copy a file and 
 
 Note: This document is written in [Markdown](https://daringfireball.net/projects/markdown/). We like to use [Typora](https://typora.io/) and [Markdown Preview Plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl?hl=en-US) for our Markdown work..
