@@ -7,7 +7,7 @@ const pkginfo = require('pkginfo')(module); // project package.json info into mo
 const PLUGIN_NAME = module.exports.name;
 import * as loglevel from 'loglevel'
 const log = loglevel.getLogger('gulpfile')
-log.setLevel((process.env.DEBUG_LEVEL || 'warn') as log.LogLevelDesc)
+log.setLevel((process.env.DEBUG_LEVEL || 'warn') as loglevel.LogLevelDesc)
 
 function tapFunction(callback: any) {
     log.info('gulp task starting for ' + PLUGIN_NAME)
