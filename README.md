@@ -12,13 +12,13 @@ A test project full of working gulpfiles, the goal here is to demonstrate some o
 {"type": "RECORD", "stream": "locations", "record": {"id": 1, "name": "Philadelphia"}}
 {"type": "STATE", "value": {"users": 2, "locations": 1}}
 ```
-**Sections**
+## Sections ##
 
 - [FTP](./FTP/README.md)
 - [Watch](./Watch/README.md)
 - [XML](./XML/README.md)
 
-**Adding Recipe**
+**Adding a Recipe**
 
 When wanting to add to recipes there are 3 items needed in each folder,
 1. gulpfile
