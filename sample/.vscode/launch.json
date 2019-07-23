@@ -8,7 +8,7 @@
             "name": "First Run",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "program": "${workspaceRoot}/../node_modules/gulp/bin/gulp.js",
             "stopOnEntry": false,
             "args": ["--gulpfile", "./gulpfile.ts", "default"],
             "cwd": "${workspaceRoot}",

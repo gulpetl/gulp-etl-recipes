@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "First Run",
+            "name": "Watch",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+            "program": "${workspaceRoot}/../node_modules/gulp/bin/gulp.js",
             "stopOnEntry": false,
             "args": ["--gulpfile", "./gulpfile.ts", "default"],
             "cwd": "${workspaceRoot}",
